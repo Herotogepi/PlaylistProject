@@ -1,6 +1,6 @@
 /**
  * File for a Song class to be used in the Playlist Project
- * @author Arjun Singh
+ * @author Arjun Singh & Cavon Hajimiri
  * @version 1/24/2025
  */
 public class Song {
@@ -8,7 +8,7 @@ public class Song {
 
     private String title;
     private String author;
-    private double time;
+    private int durationInSeconds;
     private boolean liked;
 
 
@@ -16,15 +16,13 @@ public class Song {
      * Constructor-- what information needs to be given to make a Song?
      * How will you handle 'liked' songs? It makes sense for a Song not be 'liked' by default
      */
-    public Song(String title, String author, double time)
+    public Song(String title, String author, int time)
     {
         this.title = title;
         this.author = author;
-        this.time = time;
+        durationInSeconds = time;
         liked = false;
     }
-
-
 
 
      /**
@@ -44,12 +42,21 @@ public class Song {
         return author;
     }
 
-    public double getTime()
+    public int getDuration()
     {
-        return time;
+        return durationInSeconds;
     }
 
+    public boolean isLiked(){
+        return liked;
+    }
+
+    public void setLiked(boolean status){
+        liked = status;
+    }
     
-
-
+    public String toString(){
+        return title + " by " + author + " (" + durationInSeconds/60 + ":" + durationInSeconds%60 + ")";
+    }
+    
 }

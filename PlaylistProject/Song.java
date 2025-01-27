@@ -55,8 +55,12 @@ public class Song {
         liked = status;
     }
     
+    public String getDurationMinutes(){
+        return durationInSeconds/60 + ":" + durationInSeconds%60;
+    }
+    
     public String toString(){
-        return title + " by " + author + " (" + durationInSeconds/60 + ":" + durationInSeconds%60 + ")";
+        return title + " by " + author + " (" + getDurationMinutes() + ")";
     }
     
 }

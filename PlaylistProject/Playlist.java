@@ -9,26 +9,99 @@ public class Playlist {
      * Fields-- This will likely just need to be the ArrayList of Songs. Reference our previous problems
      * (CarDealership, Zoo) for structure on how this will look
      */
+    private ArrayList<Song> playlist;
+
+    /**
+     * Constructor-- this doesn't need any parameters. You should just initialize the ArrayList and
+     * then use additional methods to add Songs in one-by-one
+     */
+    public Playlist()
+    {
+        playlist = new ArrayList<Song>();
+    }
 
 
+    /**
+     * Methods-- Remember that you need to be able to complete all of the following:
+     * Adding a song
+     * 'liking' a song
+     * Removing a specific song
+     * Examining all Songs (a String return or void print makes sense here)
+     * Examining a sublist of all liked songs
+     * Determining the total duration of all songs
+     * Removing all unliked songs from the playlist (careful with this one!)
+     */
 
+    public void newSong(Song newSong)
+    {
 
-     /**
-      * Constructor-- this doesn't need any parameters. You should just initialize the ArrayList and
-      * then use additional methods to add Songs in one-by-one
-      */
+    }
 
+    public void add(String name, String artist, int duration)
+    {
+        playlist.add(new Song(name, artist, duration));
+    }
 
-      
+    public void liking(String title)
+    {
+        for(Song song : playlist)
+        {
+            if(song.getName().equals(title))
+            {
+                song.setLiked(true);
+            }
+        }
+    }
 
-      /**
-       * Methods-- Remember that you need to be able to complete all of the following:
-       * Adding a song
-       * 'liking' a song
-       * Removing a specific song
-       * Examining all Songs (a String return or void print makes sense here)
-       * Examining a sublist of all liked songs
-       * Determining the total duration of all songs
-       * Removing all unliked songs from the playlist (careful with this one!)
-       */
+    public void likedSongs()
+    {
+        for(Song song : playlist)
+        {
+            if(song.isLiked() == true)
+            {
+                System.out.println(song);
+            }
+        }
+    }
+
+    public void removeSong(String title)
+    {
+        for(int i = 0; i < playlist.size(); i++)
+        {
+            if(playlist.get(i).getName().equals(title))
+            {
+                playlist.remove(i);
+            }
+        }
+    }
+
+    public void displaySongs()
+    {
+        for(Song song : playlist)
+        {
+            System.out.println(song);
+        }
+    }
+
+    public double totalTimeInMins()
+    {
+        int totaltime = 0;
+        for(Song song : playlist)
+        {
+            totaltime += song.getDuration();
+        }
+
+        return (totaltime/60);
+    }
+
+    public void removeUnliked()
+    {
+        for(Song song : playlist)
+        {
+            if (song.isLiked() == false)
+            {
+                playlist.remove(song);
+            }
+        }
+    }
 }

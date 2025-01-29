@@ -22,6 +22,7 @@ public class PlaylistTester {
         p.add("Dance Till You're Dead", "ANI", 142);
         p.add("METAL PIPE FALLING", "Blanco y Sancho", 84);
         p.add("Otherside", "Red Hot Chilli Peppers", 255);
+        p.add("Bennie and the Jets", "Elton John", 322);
 
 
         System.out.println("Printing the songs...\n");

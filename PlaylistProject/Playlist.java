@@ -20,7 +20,6 @@ public class Playlist {
         playlist = new ArrayList<Song>();
     }
 
-
     /**
      * Methods-- Remember that you need to be able to complete all of the following:
      * Adding a song
@@ -85,13 +84,13 @@ public class Playlist {
 
     public String totalTimeInMins()
     {
-        int totaltime = 0;
+        int totalduration = 0;
         for(Song song : playlist)
         {
-            totaltime += song.getDuration();
+            totalduration += song.getDuration();
         }
 
-        return (totaltime/60) + ":" + (totaltime%60);
+        return (totalduration/60) + ":" + (totalduration%60);
     }
 
     public void removeUnliked()

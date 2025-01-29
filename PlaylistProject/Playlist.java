@@ -31,10 +31,7 @@ public class Playlist {
      * Removing all unliked songs from the playlist (careful with this one!)
      */
 
-    public void newSong(Song newSong)
-    {
 
-    }
 
     public void add(String name, String artist, int duration)
     {

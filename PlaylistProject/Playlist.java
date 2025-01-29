@@ -98,7 +98,7 @@ public class Playlist {
     {
         for(Song song : playlist)
         {
-            if (song.isLiked() == false)
+            if (!song.isLiked())
             {
                 playlist.remove(song);
             }

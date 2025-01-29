@@ -66,7 +66,7 @@ public class Playlist {
 
     public void removeSong(String title)
     {
-        for(int i = 0; i < playlist.size(); i++)
+        for(int i = playlist.size() - 1; i >= 0; i--)
         {
             if(playlist.get(i).getName().equals(title))
             {
@@ -83,7 +83,7 @@ public class Playlist {
         }
     }
 
-    public double totalTimeInMins()
+    public String totalTimeInMins()
     {
         int totaltime = 0;
         for(Song song : playlist)
@@ -91,16 +91,16 @@ public class Playlist {
             totaltime += song.getDuration();
         }
 
-        return (totaltime/60);
+        return (totaltime/60) + ":" + (totaltime%60);
     }
 
     public void removeUnliked()
     {
-        for(Song song : playlist)
+        for(int i = playlist.size() - 1; i >= 0; i--)
         {
-            if (!song.isLiked())
+            if(!playlist.get(i).isLiked())
             {
-                playlist.remove(song);
+                playlist.remove(i);
             }
         }
     }

@@ -59,7 +59,7 @@ public class Playlist {
         {
             if(song.isLiked() == true)
             {
-                System.out.println(song);
+                System.out.println(song.toString());
             }
         }
     }
@@ -79,7 +79,7 @@ public class Playlist {
     {
         for(Song song : playlist)
         {
-            System.out.println(song);
+            System.out.println(song.toString());
         }
     }
 
